@@ -394,8 +394,8 @@ module.exports = {
                         </table>
                         <br />
                         <strong>Here's the complete code, for greenLeaf color in dark mode with RTL direction</strong>
-                            <pre><code class="language-js">// file: app/redux/modules/uiReducer.js
-   const [theme, setTheme] = useState({
+                            <pre><code class="language-js">// file: pages/_app.js
+  const [theme, setTheme] = useState({
     ...appTheme('greenLeaf', 'dark'),
     direction: 'rtl'
   });
@@ -427,7 +427,7 @@ module.exports = {
             
             
             
-            <!-- NAVIGATION -->
+            <!-- LANGUAGE -->
             <section class="row" id="lang">
                 <br /><br />
                 <div class="col-lg-10">
@@ -442,7 +442,7 @@ module.exports = {
                         </h5>
                         <ol>
                           <li>Open <code>/i18n.js</code></li>
-                          <li>change <code>defaultLanguage: 'en'</code> to other initial locale i.e. <code>id</code> for Bahasa Indonesia</li>
+                          <li>change <code>defaultLanguage: 'eng'</code> to other initial locale i.e. <code>ind</code> for Bahasa Indonesia</li>
                         </ol>
                       </li>
                       <li>
@@ -452,30 +452,41 @@ module.exports = {
                         <ol>
                           <li>
                             By default, next-i18next expects your translations to be organised as such by create new language JSON library in <code>/public/locales/[localCode]/</code>
-                            <pre>
-└── public
+                            <pre>└── public
     └── locales
-        ├── en
+        ├── eng
         |   └── common.json
-        └── de
+        |   └── theme-landing.json
+        └── deu
             └── common.json
+            └── theme-landing.json
                             </pre>
                           </li>
-                          <li>You can check the available local code here <a href="https://github.com/ladjs/i18n-locales" target="_blank">https://github.com/ladjs/i18n-locales</a></li>
-                          <li>Then register it in <code>/i18n.js</code></li>
+                          <li>You can check the available local code here <a href="https://www.loc.gov/standards/iso639-2/php/code_list.php" target="_blank">https://www.loc.gov/standards/iso639-2/php/code_list.php</a></li>
+                          <li>This template uses <strong>ISO 639-2 Code</strong>, see in first column in table</li>
+                          <li>
+                            Then register it in <code>/i18n.js</code>. Example for Deutsch.
+                            <pre class=" language-js"><code class=" language-js">otherLanguages<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'deu'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+localeSubpaths<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    deu<span class="token punctuation">:</span> <span class="token string">'de'</span><span class="token punctuation">,</span>
+    eng<span class="token punctuation">:</span> <span class="token string">'en'</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span></code>
+                            </pre>
+                          </li>
                           <li>
                             Declaring namespace dependencies in <code>_document.js</code>
-                            <pre>
-                              <code class="language-js">
-MyDocument.getInitialProps = async ctx => {
-  return {
-    namespacesRequired: ['common', 'landing-theme'],
-  }
-})
+                            <pre class=" language-js">                              <code class=" language-js">
+MyDocument<span class="token punctuation">.</span>getInitialProps <span class="token operator">=</span> <span class="token keyword">async</span> ctx <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...rest code</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    namespacesRequired<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'common'</span><span class="token punctuation">,</span> <span class="token string">'landing-theme'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
                               </code>
                             </pre>
                           </li>
                         </ol>
+                        <br />
                       </li>
                       <li>
                             <h5>
@@ -485,44 +496,47 @@ MyDocument.getInitialProps = async ctx => {
                               <li>Choose page that one to be translated, i.e <code>/pages/index.js</code></li>
                               <li>
                                 Then add namespace dependencies
-                                <pre>
-                                  <code class="language-js">
-Landing.getInitialProps = async () => ({
-  namespacesRequired: ['common', 'landing-theme'],
-})
+                                <pre class=" language-js">                                  <code class=" language-js">
+Landing<span class="token punctuation">.</span>getInitialProps <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+  namespacesRequired<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'common'</span><span class="token punctuation">,</span> <span class="token string">'theme-landing'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
                                   </code>
                                 </pre>
                               </li>
                               <li>Pick one of sample <strong>Components</strong> with cointaining text</li>
-                              <li>Import withTranslation <br />
-                                 <pre><code class="language-js">
-import { withTranslation } from '~/i18n';                              
+                              <li>Import withTranslation <br>
+                                 <pre class=" language-js"><code class=" language-js">
+<span class="token keyword">import</span> <span class="token punctuation">{</span> withTranslation <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'~/i18n'</span><span class="token punctuation">;</span>                              
                                  </code></pre>
                               </li>
                               <li>Basically the message value is <strong>String</strong>. And next step is replace/add every string in components</li>
                               <li>
                                 Register <code>t</code> function to props
-                                <pre>
-                                  <code class="language-js">
-t: PropTypes.func.isRequired
+                                <pre class=" language-js">                                  <code class=" language-js">
+t<span class="token punctuation">:</span> PropTypes<span class="token punctuation">.</span>func<span class="token punctuation">.</span>isRequired
                                   </code>
                                 </pre>
                               </li>
                               <li>
-                                Add messages inside components <br />
-                                <pre>
-                                  <code class="language-js">
-&lt;Typography component="p"&gt;
-  {t('landing-theme:footer_counter')}
-&lt;Typography&gt;
+                                Add messages inside components <br>
+                                <pre class=" language-js">                                  <code class=" language-js">
+<span class="token operator">&lt;</span>Typography component<span class="token operator">=</span><span class="token string">"p"</span><span class="token operator">&gt;</span>
+  <span class="token punctuation">{</span><span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'landing-theme:footer_counter'</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+<span class="token operator">&lt;</span>Typography<span class="token operator">&gt;</span>
+                                  </code>
+                                </pre>
+                                Or if you put all translations in common.json
+                                <pre class=" language-js">                                  <code class=" language-js">
+<span class="token operator">&lt;</span>Typography component<span class="token operator">=</span><span class="token string">"p"</span><span class="token operator">&gt;</span>
+  <span class="token punctuation">{</span><span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'common:landing-theme.footer_counter'</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+<span class="token operator">&lt;</span>Typography<span class="token operator">&gt;</span>
                                   </code>
                                 </pre>
                               </li>
                               <li>
                                 The last step, wrap the component with <code>withTranslation</code>, then open your translated page.
-                                <pre>
-                                  <code class="language-js">
-export default withTranslation(['landing-theme'])(Counter);
+                                <pre class=" language-js">                                  <code class=" language-js">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">withTranslation</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'landing-theme'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">(</span>YourCompnent<span class="token punctuation">)</span><span class="token punctuation">;</span>
                                   </code>
                                 </pre>
                               </li>
