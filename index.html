@@ -118,14 +118,14 @@
                         <h1 class="title">Thank you for Purchasing </h1>
                         <br /><br />
                         <h3>Oiron - React HTML Landing Page Collection</h3>
-                        <h4>Version 1.4.1</h4>
+                        <h4>Version 1.5.1</h4>
                         <hr />
                         <ul>
                             <li>
                                 Created : 10 Nov 2021
                             </li>
                             <li>
-                                Latest Update : 29 May 2023
+                                Latest Update : 12 May 2025
                             </li>
                         </ul>
                     </div>
@@ -233,7 +233,7 @@
                         <hr />
                       <div class="directory-tree">
                         <pre>
-└── packages
+└── react/[default or simple-routing]
     ├── [theme-name]
     │   ├── components
     │   ├── pages
@@ -267,7 +267,7 @@
 							<li>Unzip the Oiron file to a folder in your computer</li>
 							<li>Open Terminal</li>
 							<li>Go to your file project (where you've unzipped the product)</li>
-                            <li>Go to packages and choose a template. Example <code>packages/agency/</code></li>
+                            <li>Go to react/[default/ or simple-routing/] and choose a template. Example <code>/agency/</code></li>
 							<li>
                                 <strong>Install Modules</strong><br />
 								Install module dependencies by run this script in terminal
@@ -277,7 +277,6 @@
                                 <img src="images/cmd1.png" width="600" alt="process" />
                                 <br />
 							</li>
-                            <li>For installation by use lerna, please check this link <a href="#lerna">Installation using lerna</a></li>
 							<li>
                                 <strong>Run App</strong><br />
 								After build installation complete, then run the app.
@@ -367,26 +366,6 @@
                               </table>
                             </li>
 						</ul>
-                        <div id="lerna">
-                          <h3>Installation With Lerna</h3>
-                          Lerna is A tool for managing JavaScript projects with multiple packages.
-                          This template has 10 packages(projects) inside <code>packages/</code> folder.
-                          So to install them at once you can use lerna. See full docs of lerna here <a href="https://github.com/lerna/lerna">https://github.com/lerna/lerna</a>.
-                          Here's the installation guide:<br /><br />
-                          <ul>
-                            <li>
-                              Let's start by installing Lerna globally with npm:
-                              <pre><code class="language-js">npm install --global lerna</code></pre>
-                            </li>
-                            <li>Go to your root project (where you've unzipped the product)</li>
-                            <li>
-                              Then install all packages
-                              <pre><code class="language-js">lerna bootstrap</code></pre>
-                              Note: This process will take some minutes, because there's lot of modules to be installed.
-                              If got stuck for this step. Please install the packages(projects) one by one by use <code>npm install</code> instead.
-                            </li>
-                          </ul>
-                        </div>
                     </div>
                 </section>
                 <!-- END -->
@@ -399,7 +378,7 @@
                         <hr />
                         <h4>Build project</h4>
 						<ul>
-                            <li>Here'a bellow an example for <strong>agency-theme</strong>. You can use the same steps to other packages(projects)</li>
+                            <li>Here'a bellow an example for <strong>agency-theme</strong>. You can use the same steps to other template(projects)</li>
 							<li>
                                 First you need to build the production assets first
 								<pre><code class="language-js">npm run build</code></pre>
@@ -474,7 +453,7 @@ In order to test the app, install the following <a target="_blank" rel="noopener
                                 <pre><code class="language-js">npm install pm2@latest -g</code></pre>
                               </li>
                               <li>
-                                Go to project folder i.e <code>packages/agency</code>
+                                Go to project folder i.e <code>/agency</code>
                               </li>
                               <li>
                                 Create ecosystem file
@@ -834,7 +813,7 @@ project-theme
                         In other word it's an initial(empty) project with built in configuration setup.
                         <br /><br />
                         <ul>
-                          <li>You can go through to <code>/packages/starter-project/</code> folder</li>
+                          <li>You can go through to <code>//starter-project/</code> folder</li>
                           <li>Connect to the internet</li>
                           <li>Open Terminal</li>
                           <li>The next installation process are same like was described above. <a href="#install">Installation Step</a></li>
@@ -1528,6 +1507,46 @@ import BatteryStd from '@material-ui/icons/BatteryStd';
                             <thead>
                               <tr>
                                 <th>
+                                    <strong>Version 1.5.1 – 12 May, 2025</strong>
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>
+                                    Chore: Change logo import method <br />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                    File changes: <br />
+                                    - /[all-themes]/components/Footer/
+                                    - /[all-themes]/components/Logo
+                                </td>
+                              </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-striped log">
+                            <thead>
+                              <tr>
+                                <th>
+                                    <strong>Version 1.5 – 12 Oct, 2023</strong>
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>
+                                    Chore: Update HTML Version. <br />
+                                    See more details in documentation/htm-docs/index.html
+                                </td>
+                              </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-striped log">
+                            <thead>
+                              <tr>
+                                <th>
                                     <strong>Version 1.4.1 – 29 May, 2023</strong>
                                 </th>
                               </tr>
@@ -1541,7 +1560,7 @@ import BatteryStd from '@material-ui/icons/BatteryStd';
                               <tr>
                                 <td>
                                     File changes: <br />
-                                    - packages/[all-themes]/components
+                                    - /[all-themes]/components
                                 </td>
                               </tr>
                               <tr>
@@ -1552,9 +1571,9 @@ import BatteryStd from '@material-ui/icons/BatteryStd';
                               <tr>
                                 <td>
                                     File changes: <br />
-                                    - packages/[all-themes]/theme/appTheme.js <br />
-                                    - packages/[all-themes]/theme/common.js <br />
-                                    - packages/[all-themes]/vendors/hamburger-menu.css <br />
+                                    - /[all-themes]/theme/appTheme.js <br />
+                                    - /[all-themes]/theme/common.js <br />
+                                    - /[all-themes]/vendors/hamburger-menu.css <br />
                                 </td>
                               </tr>
                             </tbody>
@@ -1576,7 +1595,7 @@ import BatteryStd from '@material-ui/icons/BatteryStd';
                               <tr>
                                 <td>
                                     Files changes: <br>
-                                    - packages/[all-themes]
+                                    - /[all-themes]
                                 </td>
                               </tr>
                             </tbody>
@@ -1609,7 +1628,7 @@ import BatteryStd from '@material-ui/icons/BatteryStd';
                               <tr>
                                 <td>
                                     Files added/changes <br />
-                                    packages/[theme-name]/public/images/imgAPI.js
+                                    /[theme-name]/public/images/imgAPI.js
                                 </td>
                               </tr>
                             </tbody>
@@ -1631,9 +1650,9 @@ import BatteryStd from '@material-ui/icons/BatteryStd';
                               <tr>
                                 <td>
                                     Files added/changes <br>
-                                    - packages/[theme-name]/next-i18next.config.js <br>
-                                    - packages/[theme-name]/pages/ <br>
-                                    - packages/[theme-name]/pages/_app.js <br>
+                                    - /[theme-name]/next-i18next.config.js <br>
+                                    - /[theme-name]/pages/ <br>
+                                    - /[theme-name]/pages/_app.js <br>
                                 </td>
                               </tr>
                               <tr>
@@ -1660,7 +1679,7 @@ import BatteryStd from '@material-ui/icons/BatteryStd';
                               <tr>
                                 <td>
                                     File changes: <br />
-                                    - /packages/[theme-name]/pages/_error.js<br />
+                                    - //[theme-name]/pages/_error.js<br />
                                 </td>
                               </tr>
                               <tr>
@@ -1671,7 +1690,7 @@ import BatteryStd from '@material-ui/icons/BatteryStd';
                               <tr>
                                 <td>
                                     File changes: <br />
-                                    - /packages/[theme-name]/public/images/[theme-name]/*.png<br />
+                                    - //[theme-name]/public/images/[theme-name]/*.png<br />
                                 </td>
                               </tr>
                             </tbody>
@@ -1693,11 +1712,11 @@ import BatteryStd from '@material-ui/icons/BatteryStd';
                               <tr>
                                 <td>
                                     File changes: <br />
-                                    - /packages/[theme-name]/package.json<br />
-                                    - /packages/[theme-name]/next.config.json<br />
-                                    - /packages/[theme-name]/.eslintrc<br />
-                                    - /packages/[theme-name]/components/**/*.js<br />
-                                    - /packages/[theme-name]/components/**/*-style.js<br />
+                                    - //[theme-name]/package.json<br />
+                                    - //[theme-name]/next.config.json<br />
+                                    - //[theme-name]/.eslintrc<br />
+                                    - //[theme-name]/components/**/*.js<br />
+                                    - //[theme-name]/components/**/*-style.js<br />
                                 </td>
                               </tr>
                               <tr>
@@ -1708,8 +1727,8 @@ import BatteryStd from '@material-ui/icons/BatteryStd';
                               <tr>
                                 <td>
                                     File changes: <br />
-                                    - /packages/[theme-name]/package.json<br />
-                                    - /packages/[theme-name]/components/**/*.js<br />
+                                    - //[theme-name]/package.json<br />
+                                    - //[theme-name]/components/**/*.js<br />
                                 </td>
                               </tr>
                               <tr>
@@ -1720,9 +1739,9 @@ import BatteryStd from '@material-ui/icons/BatteryStd';
                               <tr>
                                 <td>
                                     File changes: <br />
-                                    - /packages/[theme-name]/components/Footer/Main.js<br />
-                                    - /packages/[theme-name]/components/Footer/blog-style.js<br />
-                                    - /packages/[theme-name]/components/Footer/sitemap-style.js<br />
+                                    - //[theme-name]/components/Footer/Main.js<br />
+                                    - //[theme-name]/components/Footer/blog-style.js<br />
+                                    - //[theme-name]/components/Footer/sitemap-style.js<br />
                                 </td>
                               </tr>
                               <tr>
@@ -1733,7 +1752,7 @@ import BatteryStd from '@material-ui/icons/BatteryStd';
                               <tr>
                                 <td>
                                     File changes: <br />
-                                    - /packages/[theme-name]/components/Cards/product-card-style.js
+                                    - //[theme-name]/components/Cards/product-card-style.js
                                 </td>
                               </tr>
                               <tr>
